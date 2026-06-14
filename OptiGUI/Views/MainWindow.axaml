@@ -15,47 +15,32 @@
         <vm:MainWindowViewModel />
     </Design.DataContext>
 
-    <Grid ColumnDefinitions="Auto, *">
+    <!-- tre sa fol dock panel pt fereastra pricipala !-->
 
-        <Border Name="Sidebar"
-                Grid.Column="0"
-                Width="70"
-                Background="Tan"
-                Padding="10">
+    <DockPanel>
 
-            <StackPanel Spacing="10">
-                <Button Content="===" Click="ToggleSidebar_Click" />
-                <Button Content="🏠" />
+        <!-- App shell: header + sidebar + content -->
+        <Menu DockPanel.Dock="Top"
+              Background="Gray">
+            <MenuItem Header="_File" />
+            <MenuItem Header="_Edit" />
+        </Menu>
 
-                <Button Content="🎮" />
+        <StackPanel DockPanel.Dock="Left"
+                    Width="100"
+                    Spacing="4"
+                    Background="Navy">
+            <!-- Sidebar: vertical list of navigation items -->
+            <Button Content="Games"  />
+            <Button Content="Favorites" />
+            <Button Content="Settings" />
+        </StackPanel>
 
-                <Button Content="⚙" />
-            </StackPanel>
-        </Border>
-        <Border Grid.Column="1"
+        <Grid RowDefinitions="*,Auto">
+            <!-- Content area: main content + status bar -->
+            <ContentControl Grid.Row="0" />
+            <TextBlock Grid.Row="1" Background="Lime" Text="Ready" />
+        </Grid>
 
-                Background="#111318"
-
-                Padding="20">
-
-            <StackPanel>
-
-                <TextBlock Text="OptiScaler Manager"
-                           HorizontalAlignment="Center"
-
-                           FontSize="28"
-
-                           Foreground="White" />
-
-                <TextBlock Text="Aici vine conținutul paginii."
-
-                           Foreground="Gray"
-
-                           Margin="0,10,0,0" />
-
-            </StackPanel>
-
-        </Border>
-    </Grid>
-    <!-- <Button Click="Butto n_OnClick" HorizontalAlignment="Center">Calculate</Button> -->
+    </DockPanel>
 </Window>
