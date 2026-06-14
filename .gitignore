@@ -43,6 +43,9 @@ ScaffoldingReadMe.txt
 ~$*
 *~
 CodeCoverage/
+.DS_Store
+/.idea/
+/OptiGUI/OptiScaler_Client_Gui/
 
 # MSBuild Binary and Structured Log
 *.binlog
