@@ -1,0 +1,61 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:OptiGUI.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="600"
+        x:Class="OptiGUI.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="OptiGUI">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <Grid ColumnDefinitions="Auto, *">
+
+        <Border Name="Sidebar"
+                Grid.Column="0"
+                Width="70"
+                Background="Tan"
+                Padding="10">
+
+            <StackPanel Spacing="10">
+                <Button Content="===" Click="ToggleSidebar_Click" />
+                <Button Content="🏠" />
+
+                <Button Content="🎮" />
+
+                <Button Content="⚙" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="1"
+
+                Background="#111318"
+
+                Padding="20">
+
+            <StackPanel>
+
+                <TextBlock Text="OptiScaler Manager"
+                           HorizontalAlignment="Center"
+
+                           FontSize="28"
+
+                           Foreground="White" />
+
+                <TextBlock Text="Aici vine conținutul paginii."
+
+                           Foreground="Gray"
+
+                           Margin="0,10,0,0" />
+
+            </StackPanel>
+
+        </Border>
+    </Grid>
+    <!-- <Button Click="Butto n_OnClick" HorizontalAlignment="Center">Calculate</Button> -->
+</Window>
