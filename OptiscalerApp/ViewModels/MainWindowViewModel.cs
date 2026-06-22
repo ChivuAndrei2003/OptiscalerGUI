@@ -3,6 +3,6 @@
 public class MainWindowViewModel : ViewModelBase
 {
     public string Greeting { get; } = "Welcome to Avalonia!";
-    public object SortProperty { get; }
-    public object SortDescending { get; }
+    public int SortIndex { get; set; }
+    public bool SortDescending { get; set; }
 }

@@ -12,6 +12,7 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+        PageContent.Content = new GamesView();
     }
 
     // private void Button_OnClick(object? sender, RoutedEventArgs e)
@@ -97,11 +98,11 @@ public partial class MainWindow : Window
 
     private void AddGames_Click(object? sender, RoutedEventArgs e)
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Add Games is not implemented yet.");
     }
 
     private void ScanGames_Click(object? sender, RoutedEventArgs e)
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Scan Games is not implemented yet.");
     }
 }
